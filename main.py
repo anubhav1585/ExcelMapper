@@ -12,7 +12,7 @@ def find_record(file_path):
 
     document_position = headers.index("Account No.")
 
-    target = "CST0001009"
+    target = "dasd"
 
     for row in rows:
 
@@ -21,6 +21,7 @@ def find_record(file_path):
         if current_value == target:
 
             return row
+    return None
 
 
 result = find_record("source.xlsx")
