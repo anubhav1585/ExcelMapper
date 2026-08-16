@@ -1,30 +1,43 @@
 import openpyxl
 
-def find_record(file_path):
 
-    workbook = openpyxl.load_workbook(file_path)
+def source_excel(source_file):
+    # Load the source Excel file
+    source_workbook = openpyxl.load_workbook(source_file)
+    
+    Source_sheet_list = source_workbook.sheetnames
+    print("choose the sheet you want to copy from the source file:")
+    for i in source_workbook.sheetnames:
+        n = Source_sheet_list.index(i) + 1
+        print(str(n) + ". " + i)
 
-    sheet = workbook.active
+    source_sheet_choice = int(input("Enter the number of the sheet you want to copy: "))
+    source_seleced_sheet = Source_sheet_list[source_sheet_choice - 1]
 
-    rows = sheet.iter_rows(values_only=True)
+    source_sheet = source_workbook[source_seleced_sheet]
 
-    headers = next(rows)
+    rows = source_sheet.iter_rows(values_only=True)
+    headers = next(rows) #it gives 1st row
 
-    document_position = headers.index("Account No.")
+    print("please give the unique Key:")
+    for i in headers:
+        print(i)
 
-    target = "dasd"
-
-    for row in rows:
-
-        current_value = row[document_position]
-
-        if current_value == target:
-
-            return row
-    return None
+    unique_key = input("enter the Unique key:")
 
 
-result = find_record("source.xlsx")
+    unique_key_index = headers.index(unique_key) 
 
-print(result)
-print(result[0])
+    for i in rows:
+        print(i[unique_key_index])
+        
+
+    
+  
+  
+
+
+
+source_excel("/Users/suresh/Desktop/App/ExcelMapper/source.xlsx")
+
+    
