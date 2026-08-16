@@ -1,3 +1,4 @@
+from matplotlib.pyplot import bar
 import openpyxl
 
 
@@ -23,7 +24,7 @@ def source_excel(source_file):
     for i in headers:
         print(i)
 
-    unique_key = input("enter the Unique key:")
+    unique_key = input(" enter the Unique key: ")
 
 
     unique_key_index = headers.index(unique_key) 
@@ -31,13 +32,20 @@ def source_excel(source_file):
     for i in rows:
         print(i[unique_key_index])
         
-
     
-  
-  
 
 
 
+
+
+
+
+
+
+
+
+
+#calling functions
 source_excel("/Users/suresh/Desktop/App/ExcelMapper/source.xlsx")
 
     
