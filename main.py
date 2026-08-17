@@ -108,7 +108,8 @@ def target_excel(target_path,source_unique_key,source_data,source_unique_key_ind
                         target_cell = target_sheet.cell( row=target_row_number,column=target_index + 1)
 
                         target_cell.value = j[source_index]
-                
+
+    t_workbook.save(target_path)          
 
 
     
@@ -118,5 +119,3 @@ def target_excel(target_path,source_unique_key,source_data,source_unique_key_ind
 source_unique_key,source_data,source_unique_key_index,source_headers = source_excel("/Users/suresh/Desktop/App/ExcelMapper/source.xlsx")
 
 target_excel("/Users/suresh/Desktop/App/ExcelMapper/Target.xlsx",source_unique_key,source_data,source_unique_key_index,source_headers)
-
-    
