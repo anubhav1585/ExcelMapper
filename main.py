@@ -67,26 +67,6 @@ def target_excel(target_path,source_unique_key,source_data,source_unique_key_ind
     print("Unique key received in target:",source_unique_key)
     print("Target unique key index:", target_unique_key_index)
 
-    # for i in target_data:
-
-    #     key = i[target_unique_key_index]
-
-    #     for j in source_data:
-
-    #         key2 = j[source_unique_key_index]
-
-    #         if key == key2:
-
-    #             print("MATCH:", key)
-
-    #             for column in target_header:
-
-    #                 if column in source_headers:
-
-    #                     source_index = source_headers.index(column)
-    #                     target_index = target_header.index(column)
-
-    #                     print(column,"Source value:", j[source_index],"Target position:", target_index)
 
     for target_row_number, i in enumerate(target_data, start=2):
 
